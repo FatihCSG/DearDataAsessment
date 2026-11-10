@@ -27,36 +27,123 @@ class Wheel {
   // method to draw the wheel
   void display() {
 
-    // silver rim outside
-    fill(170, 175, 180);
-    stroke(225);
-    strokeWeight(3);
-    ellipse(x, y, wheelSize - 18, wheelSize - 18);
 
 
-    // silver rim inside
-    fill(55, 60, 65);
-    ellipse(x, y, wheelSize - 45, wheelSize - 45);
 
 
-    // Brake disc
-    fill(185, 190, 193);
-    stroke(130);
-    ellipse(x, y, wheelSize - 65, wheelSize - 65);
+//this whole if statement from here to
+    if (mood =="green") {
+      fill(0, 255, 0);
+      stroke(225);
+      strokeWeight(3);
+      ellipse(x, y, wheelSize - 18, wheelSize - 18);
+
+      // silver rim inside
+      fill(55, 60, 65);
+      ellipse(x, y, wheelSize - 45, wheelSize - 45);
 
 
+      // Brake disc
+      fill(185, 190, 193);
+      stroke(130);
+      ellipse(x, y, wheelSize - 65, wheelSize - 65);
+
+
+
+      // Spokes
+      stroke(240);
+      strokeWeight(5);
+
+      line(x - wheelSize/3, y, x + wheelSize/3, y);
+
+      line(x, y - wheelSize/3, x, y + wheelSize/3);
+
+      line(x - wheelSize/4, y - wheelSize/4, x + wheelSize/4, y + wheelSize/4);
+
+      line(x - wheelSize/4, y + wheelSize/4, x + wheelSize/4, y - wheelSize/4);
+    }
+
+    if (mood == "yellow") {
+      fill(255, 255, 0);
+      stroke(225);
+      strokeWeight(3);
+      ellipse(x, y, wheelSize - 18, wheelSize - 18);
+
+      // silver rim inside
+      fill(55, 60, 65);
+      ellipse(x, y, wheelSize - 45, wheelSize - 45);
+
+
+      // Brake disc
+      fill(185, 190, 193);
+      stroke(130);
+      ellipse(x, y, wheelSize - 65, wheelSize - 65);
+
+
+      // Spokes
+      stroke(240);
+      strokeWeight(5);
+
+      line(x - wheelSize/3, y, x + wheelSize/3, y);
+
+      line(x, y - wheelSize/3, x, y + wheelSize/3);
+
+      line(x - wheelSize/4, y - wheelSize/4, x + wheelSize/4, y + wheelSize/4);
+
+      line(x - wheelSize/4, y + wheelSize/4, x + wheelSize/4, y - wheelSize/4);
+    }
+
+
+
+    if (mood == "red") {
+      fill(255, 0, 0);
+      stroke(225);
+      strokeWeight(3);
+      ellipse(x, y, wheelSize - 18, wheelSize - 18);
+
+      // silver rim inside
+      fill(55, 60, 65);
+      ellipse(x, y, wheelSize - 45, wheelSize - 45);
+
+
+      // Brake disc
+      stroke(130);
+      ellipse(x, y, wheelSize - 65, wheelSize - 65);
+
+
+      // Spokes
+
+      fill(255, 0, 0);
+      stroke(240);
+      strokeWeight(5);
+
+      line(x - wheelSize/3, y, x + wheelSize/3, y);
+
+      line(x, y - wheelSize/3, x, y + wheelSize/3);
+
+      line(x - wheelSize/4, y - wheelSize/4, x + wheelSize/4, y + wheelSize/4);
+
+      line(x - wheelSize/4, y + wheelSize/4, x + wheelSize/4, y - wheelSize/4);
+    }
+
+
+//...here represents the command to draw on the OUTER RIM and pick its colour based on input.
+
+
+    /*
     // Spokes
-    stroke(240);
-    strokeWeight(5);
-
-    line(x - wheelSize/3, y, x + wheelSize/3, y);
-
-    line(x, y - wheelSize/3, x, y + wheelSize/3);
-
-    line(x - wheelSize/4, y - wheelSize/4, x + wheelSize/4, y + wheelSize/4);
-
-    line(x - wheelSize/4, y + wheelSize/4, x + wheelSize/4, y - wheelSize/4);
-
+     stroke(240);
+     strokeWeight(5);
+     
+     line(x - wheelSize/3, y, x + wheelSize/3, y);
+     
+     line(x, y - wheelSize/3, x, y + wheelSize/3);
+     
+     line(x - wheelSize/4, y - wheelSize/4, x + wheelSize/4, y + wheelSize/4);
+     
+     line(x - wheelSize/4, y + wheelSize/4, x + wheelSize/4, y - wheelSize/4);
+     
+     */
 
     // Brake caliper represents how I felt my day went
     noStroke();
@@ -69,8 +156,7 @@ class Wheel {
       fill(205, 0, 0);
     }
 
-    rect(x + wheelSize/4, y - 23,
-      15, 46, 4);
+    rect(x + wheelSize/4, y - 23, 15, 46, 4);
 
 
     // Centre cap
@@ -81,7 +167,5 @@ class Wheel {
     textAlign(CENTER, CENTER);
     textSize(9);
     text("DATA", x, y);
-
-
   }
 }
