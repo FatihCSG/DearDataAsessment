@@ -31,15 +31,15 @@ class Wheel {
 
 
 
-//this whole if statement from here to
+    //this whole if statement from here to
     if (mood =="green") {
-      fill(0, 255, 0);
-      stroke(225);
+      fill(100);
+      stroke(0);
       strokeWeight(3);
       ellipse(x, y, wheelSize - 18, wheelSize - 18);
 
       // silver rim inside
-      fill(55, 60, 65);
+      fill(0, 255, 0);
       ellipse(x, y, wheelSize - 45, wheelSize - 45);
 
 
@@ -48,29 +48,33 @@ class Wheel {
       stroke(130);
       ellipse(x, y, wheelSize - 65, wheelSize - 65);
 
+      //brake calliper
+      fill(0, 170, 0);
+      rect(x + wheelSize/6, y - 23, 15, 46, 4);
+
 
 
       // Spokes
-      stroke(240);
-      strokeWeight(5);
+      stroke(0, 255, 0);
+      strokeWeight(7);
 
-      line(x - wheelSize/3, y, x + wheelSize/3, y);
+      line(x - wheelSize/3, y, x + wheelSize/3, y); //this is the horizontal spoke -
 
-      line(x, y - wheelSize/3, x, y + wheelSize/3);
+      line(x, y - wheelSize/4, x, y + wheelSize/4); // this is the vertical spoke |
 
-      line(x - wheelSize/4, y - wheelSize/4, x + wheelSize/4, y + wheelSize/4);
+      line(x - wheelSize/5, y - wheelSize/5, x + wheelSize/5, y + wheelSize/5); //this is the backslash spoke \
 
-      line(x - wheelSize/4, y + wheelSize/4, x + wheelSize/4, y - wheelSize/4);
+      line(x - wheelSize/5, y + wheelSize/5, x + wheelSize/5, y - wheelSize/5); //this is the forward slash spoke /
     }
 
     if (mood == "yellow") {
-      fill(255, 255, 0);
-      stroke(225);
+      fill(100);
+      stroke(0);
       strokeWeight(3);
       ellipse(x, y, wheelSize - 18, wheelSize - 18);
 
       // silver rim inside
-      fill(55, 60, 65);
+      fill(255, 255, 0);
       ellipse(x, y, wheelSize - 45, wheelSize - 45);
 
 
@@ -80,83 +84,73 @@ class Wheel {
       ellipse(x, y, wheelSize - 65, wheelSize - 65);
 
 
+      //brake calliper
+      fill(150, 150, 0);
+      rect(x + wheelSize/6, y - 23, 15, 46, 4);
+
+
       // Spokes
-      stroke(240);
+      stroke(255, 255, 0);
       strokeWeight(5);
 
-      line(x - wheelSize/3, y, x + wheelSize/3, y);
+      line(x - wheelSize/3, y, x + wheelSize/3, y); //this is the horizontal spoke -
 
-      line(x, y - wheelSize/3, x, y + wheelSize/3);
+      line(x, y - wheelSize/4, x, y + wheelSize/4); // this is the vertical spoke |
 
-      line(x - wheelSize/4, y - wheelSize/4, x + wheelSize/4, y + wheelSize/4);
+      line(x - wheelSize/5, y - wheelSize/5, x + wheelSize/5, y + wheelSize/5); //this is the backslash spoke \
 
-      line(x - wheelSize/4, y + wheelSize/4, x + wheelSize/4, y - wheelSize/4);
+      line(x - wheelSize/5, y + wheelSize/5, x + wheelSize/5, y - wheelSize/5); //this is the forward slash spoke /
     }
 
 
 
     if (mood == "red") {
-      fill(255, 0, 0);
-      stroke(225);
+      fill(100);
+      stroke(0);
       strokeWeight(3);
       ellipse(x, y, wheelSize - 18, wheelSize - 18);
-
-      // silver rim inside
-      fill(55, 60, 65);
-      ellipse(x, y, wheelSize - 45, wheelSize - 45);
-
-
-      // Brake disc
+      
+      /*// Brake disc
       stroke(130);
       ellipse(x, y, wheelSize - 65, wheelSize - 65);
+      */
+      
+      // silver rim inside
+      fill(150, 0, 0);
+      ellipse(x, y, wheelSize - 45, wheelSize - 45);
+      
+      
+      // Brake disc
+      fill(185, 190, 193);
+      stroke(130);
+      ellipse(x, y, wheelSize - 65, wheelSize - 65);
+
+      //brake calliper
+      noStroke();
+      fill(100, 0, 0);
+      rect(x + wheelSize/6, y - 23, 15, 46, 4);
+      
 
 
       // Spokes
 
-      fill(255, 0, 0);
-      stroke(240);
+      stroke(150, 0, 0);
       strokeWeight(5);
 
-      line(x - wheelSize/3, y, x + wheelSize/3, y);
+      line(x - wheelSize/3, y, x + wheelSize/3, y); //this is the horizontal spoke -
 
-      line(x, y - wheelSize/3, x, y + wheelSize/3);
+      line(x, y - wheelSize/4, x, y + wheelSize/4); // this is the vertical spoke |
 
-      line(x - wheelSize/4, y - wheelSize/4, x + wheelSize/4, y + wheelSize/4);
+      line(x - wheelSize/5, y - wheelSize/5, x + wheelSize/5, y + wheelSize/5); //this is the backslash spoke \
 
-      line(x - wheelSize/4, y + wheelSize/4, x + wheelSize/4, y - wheelSize/4);
+      line(x - wheelSize/5, y + wheelSize/5, x + wheelSize/5, y - wheelSize/5); //this is the forward slash spoke /
     }
 
 
-//...here represents the command to draw on the OUTER RIM and pick its colour based on input.
+    //...here represents the command to draw on the OUTER RIM and pick its colour based on input.
 
 
-    /*
-    // Spokes
-     stroke(240);
-     strokeWeight(5);
-     
-     line(x - wheelSize/3, y, x + wheelSize/3, y);
-     
-     line(x, y - wheelSize/3, x, y + wheelSize/3);
-     
-     line(x - wheelSize/4, y - wheelSize/4, x + wheelSize/4, y + wheelSize/4);
-     
-     line(x - wheelSize/4, y + wheelSize/4, x + wheelSize/4, y - wheelSize/4);
-     
-     */
 
-    // Brake caliper represents how I felt my day went
-    noStroke();
-
-    if (mood == "green") {
-      fill(0, 170, 0);
-    } else if (mood =="yellow") {
-      fill(235, 185, 35);
-    } else {
-      fill(205, 0, 0);
-    }
-
-    rect(x + wheelSize/4, y - 23, 15, 46, 4);
 
 
     // Centre cap
